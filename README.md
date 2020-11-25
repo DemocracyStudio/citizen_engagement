@@ -49,24 +49,33 @@ If conditions X are true, and y true or >= threshold value, the citizen can be c
 
 TO IMPROVE THE MODEL :
 
-break the multiple answers string to single values (check string_split to put them in separate columns or ideally rows if the primary key is not an issue)
+break the multiple answers string to single values (check string_split to put them in separate columns or ideally rows if the primary key is not an issue) => maybe not needed to break if possible to count single answers by REGEX function.
 
-survey_date, interview_date, tweet_date must be reformatted to integrate in SQL tables 
+survey_date, interview_date, tweet_date must be reformatted to integrate in SQL tables
+
 Attribute a tweet_id, a city_id and an agent_id to twitter datasets from categories of agent
 Add new columns in the tweet table (notably agent_category, agent_type + followers, followings, …) depending on datasets
 Upload the datasets in the tweet table. 
 
-drawing a diagram of the process which assesses an agent a higly_engaged level : if A is true and B is true and C is true and D is not true, and E or F is true then high.  containing all concerned columns and potentially up to receive more.  
-bring sentiment analysis to give the tweets a category between POSITIVE - NEUTRAL - NEGATIVE. This value can be stored in a column tweet_sentiment. 
+Look for more total_likes, total_retweets info about tweets
+Look for more info about agent_id based on twitter_profile
+
+drawing a diagram of the process which assesses an agent a higly_engaged level :
+if A is true and B is true and C is true and D is not true, and E or F is true then high. 
+containing all concerned columns and potentially up to receive more. 
+
+bring sentiment analysis to give the tweets a category between POSITIVE - NEUTRAL - NEGATIVE. 
+This value can be stored in a column tweet_sentiment. 
 Calculate the % of each tweet_sentiment for the whole dataset (= mean)
 Calculate the % of each tweet_sentiment by city_id 
 Compare the % of each tweet_sentiment by city_id to the mean (= standard deviation)
 
 Check if possible to calculate a grading sentiment intensiveness (FLOAT number) 
-If possible, store it in tweet_intensiveness and bucket into engagement_level, in order to identify the highly_engaged citizens (T/F) based on a threshold value to be defined.  (BE CAREFUL : being highly_engaged do not means having a positive sentiment only)  => calculate engagement_level with a NEUTRAL category around the 50% of intensiveness  OR  => with tweet_sentiment NEUTRAL = tweet_intensiveness 0%, tweet_sentiment POSITIVE having tweet_intensiveness +(0 to n)% and tweet_sentiment NEGATIVE having tweet_intensiveness -(0 to n)%
+If possible, store it in tweet_intensiveness and bucket into engagement_level, in order to identify the highly_engaged citizens (T/F) based on a threshold value to be defined. 
+(BE CAREFUL : being highly_engaged do not means having a positive sentiment only) => calculate engagement_level with a NEUTRAL category around the 50% of intensiveness OR => with tweet_sentiment NEUTRAL = tweet_intensiveness 0%, tweet_sentiment POSITIVE having tweet_intensiveness +(0 to n)% and tweet_sentiment NEGATIVE having tweet_intensiveness -(0 to n)%
 
-This sentiment_analysis or sentiment_intensiveness data, is my test/train data source for y everything else is X including City. 
+This sentiment_analysis or sentiment_intensiveness data, is my test/train data source for y everything else is X including City. 
 A global_engaging_score can be calculated by combining different parameters from citizens engagement_score / highly_engaged (T/F).
 
-A global_sentiment_score can be calculated by combining different parameters from tweet_sentiment AND/OR tweet_intensiveness. 
+A global_sentiment_score can be calculated by combining different parameters from tweet_sentiment AND/OR tweet_intensiveness.
 A global ranking will be processed on the cities based on their global_engaging_score and global_sentiment_score.
