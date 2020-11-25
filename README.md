@@ -52,6 +52,7 @@ TO IMPROVE THE MODEL :
 break the multiple answers string to single values (check string_split to put them in separate columns or ideally rows if the primary key is not an issue) => maybe not needed to break if possible to count single answers by REGEX function.
 
 survey_date, interview_date, tweet_date must be reformatted to integrate in SQL tables
+replace #N/A by "" in the whole datasets
 
 Attribute a tweet_id, a city_id and an agent_id to twitter datasets from categories of agent
 Add new columns in the tweet table (notably agent_category, agent_type + followers, followings, …) depending on datasets
