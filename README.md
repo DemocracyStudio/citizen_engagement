@@ -54,10 +54,9 @@ break the multiple answers string to single values (check string_split to put th
 survey_date, interview_date, tweet_date must be reformatted to integrate in SQL tables
 replace #N/A by "" in the whole datasets
 
-Attribute a tweet_id, a city_id and an agent_id to twitter datasets from categories of agent
-Add new columns in the tweet table (notably agent_category, agent_type + followers, followings, …) depending on datasets
-Upload the datasets in the tweet table. 
+Upload the stakeholders datasets in the tweet table. 
 
+Add the name on agent table, based on tweet datasets' name.
 Look for more total_likes, total_retweets info about tweets
 Look for more info about agent_id based on twitter_profile
 
