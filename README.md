@@ -56,9 +56,8 @@ replace #N/A by "" in the whole datasets
 
 Upload the stakeholders datasets in the tweet table. 
 
-Add the name on agent table, based on tweet datasets' name.
-Look for more total_likes, total_retweets info about tweets
 Look for more info about agent_id based on twitter_profile
+Add the name on agent table, based on tweet datasets' name.
 
 drawing a diagram of the process which assesses an agent a higly_engaged level :
 if A is true and B is true and C is true and D is not true, and E or F is true then high. 
