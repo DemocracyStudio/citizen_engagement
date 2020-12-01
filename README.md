@@ -49,7 +49,7 @@ If conditions X are true, and y true or >= threshold value, the citizen can be c
 
 TO IMPROVE THE MODEL :
 
-break the multiple answers string to single values (check string_split to put them in separate columns or ideally rows if the primary key is not an issue) => maybe not needed to break if possible to count single answers by REGEX function.
+break the multiple answers string to single values (check string_split to put them in separate columns or ideally rows if the primary key is not an issue) => maybe not needed to break if possible to count single answers by REGEX function. => or verbal expressions https://github.com/VerbalExpressions/PythonVerbalExpressions
 
 survey_date, interview_date, tweet_date must be reformatted to integrate in SQL tables
 replace #N/A by "" in the whole datasets
