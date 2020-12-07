@@ -49,12 +49,12 @@ If conditions X are true, and y true or >= threshold value, the citizen can be c
 
 TO IMPROVE THE MODEL :
 
+Survey datasets :
 break the multiple answers string to single values (check string_split to put them in separate columns or ideally rows if the primary key is not an issue) => maybe not needed to break if possible to count single answers by REGEX function. => or verbal expressions https://github.com/VerbalExpressions/PythonVerbalExpressions
 
+all datasets :
 survey_date, interview_date, tweet_date must be reformatted to integrate in SQL tables
 replace #N/A by "" in the whole datasets
-
-Upload the stakeholders datasets in the tweet table. 
 
 find the name of my agent_id based on twitter_profile, interview and survey email (not shared on this database for privacy issue)
 Add it to agent table
@@ -62,9 +62,9 @@ Add it to agent table
 find the twitter_profile of my interview and survey participants. 
 add it to agent table
 
-drawing a diagram of the process which assesses an agent a higly_engaged level :
-if A is true and B is true and C is true and D is not true, and E or F is true then high. 
-containing all concerned columns and potentially up to receive more. 
+
+Tweet datasets :
+Upload the stakeholders datasets in the tweet table. 
 
 bring sentiment analysis to give the tweets a category between POSITIVE - NEUTRAL - NEGATIVE. 
 This value can be stored in a column tweet_sentiment. 
@@ -72,7 +72,7 @@ Calculate the % of each tweet_sentiment for the whole dataset (= mean)
 Calculate the % of each tweet_sentiment by city_id 
 Compare the % of each tweet_sentiment by city_id to the mean (= standard deviation)
 
-Check if possible to calculate a grading sentiment intensiveness (FLOAT number) 
+Check if possible to calculate a sentiment intensiveness (FLOAT number) 
 If possible, store it in tweet_intensiveness and bucket into engagement_level, in order to identify the highly_engaged citizens (T/F) based on a threshold value to be defined. 
 (BE CAREFUL : being highly_engaged do not means having a positive sentiment only) => calculate engagement_level with a NEUTRAL category around the 50% of intensiveness OR => with tweet_sentiment NEUTRAL = tweet_intensiveness 0%, tweet_sentiment POSITIVE having tweet_intensiveness +(0 to n)% and tweet_sentiment NEGATIVE having tweet_intensiveness -(0 to n)%
 
@@ -81,3 +81,4 @@ A global_engaging_score can be calculated by combining different parameters from
 
 A global_sentiment_score can be calculated by combining different parameters from tweet_sentiment AND/OR tweet_intensiveness.
 A global ranking will be processed on the cities based on their global_engaging_score and global_sentiment_score.
+
