@@ -52,6 +52,9 @@ TO IMPROVE THE MODEL :
 Survey datasets :
 break the multiple answers string to single values (check string_split to put them in separate columns or ideally rows if the primary key is not an issue) => maybe not needed to break if possible to count single answers by REGEX function. => or verbal expressions https://github.com/VerbalExpressions/PythonVerbalExpressions
 
+find twitter_url of participants based on email (this information can't be public : privacy issues)
+however for my private use, I will cross variables between survey respondents and twitter engagement.
+
 all datasets :
 survey_date, interview_date, tweet_date must be reformatted to integrate in SQL tables
 replace #N/A by "" in the whole datasets
