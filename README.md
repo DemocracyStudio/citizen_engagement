@@ -82,3 +82,6 @@ A global_engaging_score can be calculated by combining different parameters from
 A global_sentiment_score can be calculated by combining different parameters from tweet_sentiment AND/OR tweet_intensiveness.
 A global ranking will be processed on the cities based on their global_engaging_score and global_sentiment_score.
 
+Interview datasets :
+replace linkedin_url by twitter_profile
+
