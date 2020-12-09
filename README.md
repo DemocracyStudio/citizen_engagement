@@ -48,14 +48,7 @@ If conditions X are true, and y true or >= threshold value, the citizen can be c
 
 
 TO IMPROVE THE MODEL :
-
-Survey datasets :
-break the multiple answers string to single values (check string_split to put them in separate columns or ideally rows if the primary key is not an issue) => maybe not needed to break if possible to count single answers by REGEX function. => or verbal expressions https://github.com/VerbalExpressions/PythonVerbalExpressions
-
-find twitter_url of participants based on email (this information can't be public : privacy issues)
-however for my private use, I will cross variables between survey respondents and twitter engagement.
-
-all datasets :
+/all datasets :
 survey_date, interview_date, tweet_date must be reformatted to integrate in SQL tables
 replace #N/A by "" in the whole datasets
 
@@ -65,9 +58,19 @@ Add it to agent table
 find the twitter_profile of my interview and survey participants. 
 add it to agent table
 
+I keep having problems with FK and PK when importing the data in DB. Find a way to remove all duplicate agent_id and modify the corresponding rows in datasets.
 
-Tweet datasets :
+
+/Survey datasets :
+break the multiple answers string to single values (check string_split to put them in separate columns or ideally rows if the primary key is not an issue) => maybe not needed to break if possible to count single answers by REGEX function. => or verbal expressions https://github.com/VerbalExpressions/PythonVerbalExpressions
+
+find twitter_url of participants based on email (this information can't be public : privacy issues)
+however for my private use, I will cross variables between survey respondents and twitter engagement.
+
+/Tweet datasets :
 Upload the stakeholders datasets in the tweet table. 
+
+a few agent_id are duplicates while twitter_profiles are not the same. Find a solution to change the agent_id and replace it in the tweet merge file in order to have all the agents in the DB.
 
 bring sentiment analysis to give the tweets a category between POSITIVE - NEUTRAL - NEGATIVE. 
 This value can be stored in a column tweet_sentiment. 
